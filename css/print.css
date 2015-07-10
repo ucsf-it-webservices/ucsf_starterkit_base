@@ -1,0 +1,23 @@
+/* line 1, ../scss/print.scss */
+.top-region-container,
+.header-container,
+.page-container h2,
+.page-container .breadcrumb,
+.page-container .sidebar-first,
+.page-container .sidebar-second,
+.footer-container,
+#overlay-disable-message,
+.drupal-messages {
+  display: none; }
+
+/* line 16, ../scss/print.scss */
+#main-content {
+  display: block; }
+
+/* line 20, ../scss/print.scss */
+a.vtab {
+  font-weight: bold;
+  display: block;
+  margin-top: 20px;
+  color: #000;
+  text-decoration: none; }

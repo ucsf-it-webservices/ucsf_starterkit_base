@@ -1,0 +1,174 @@
+body{
+  font-family: $main-font;
+     font-weight: 300;
+  line-height: 1.5em;
+  font-size: 0.875em;
+}
+.field-name-body {
+  font-size: 1.1em;
+  p.bigger {
+    font-size: 1.3em;
+  }
+  h3, h4 {
+    font-weight: 300;
+    font-size: 22px;
+  }
+  ol li,
+  ul li {
+    list-style-position: inside;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+.active, .active-trail{font-weight: 300;}
+
+
+// Headers
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
+}
+.page .callout-box h2 {
+  font-weight: bold;
+}
+// 32, 26, 20, 18
+
+h1 { font-size: 2.2em; line-height: 1.5em; font-family: $secondary-font }
+h2 { font-size: 1.625em; line-height: 1.5em; }
+h3 { font-size: 1.250em; line-height: 1.5em; }
+h4 { font-size: 1.125em; line-height: 1.5em; }
+h5,h6 { font-size: .838em; line-height: 1.5em; }
+
+.header-container .siteinfo h1 {
+  font-family: $main-font;
+}
+
+#main-content > h1 {
+  font-weight: normal;
+  font-size: 2.5em;
+  line-height: 1.15;
+}
+
+
+.col .title { @extend h3; line-height: 2em;}
+
+// Paragraphs
+p {
+  // font-size: .875em;
+  line-height: 1.5em;
+  margin: 0 0 1em 0;
+
+  &.bigger {
+    font-size: 1.4em;
+  }
+}
+
+// Links
+a,
+a:link,
+a:visited,
+a:active, a:hover {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.active {
+  font-weight: 300;
+}
+
+// Lists
+
+ul, ol {
+  margin: 0 0 2em 2em;
+
+  ul, ol {
+    margin-bottom: 0;
+  }
+}
+
+ul {
+  list-style: disc outside none;
+  li {
+    // font-size: 0.875em;
+    list-style: inherit;
+  }
+}
+
+ol {
+  list-style: decimal;
+  li {
+    // font-size: 0.875em;
+    list-style: inherit;
+  }
+}
+
+// Block Quotes
+blockquote {
+  border-left: .5em solid rgba(0, 0, 0, 0.1);
+  margin: 1.5em;
+  padding-left: 1em;
+  font-style: italic;
+}
+
+img {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid rgba(0,0,0, .1);
+  max-width: 95%;
+  height: auto;
+}
+
+strong {
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  thead {
+    tr{
+      border-top: 0px;
+    }
+    td {
+      font-weight: bold;
+    }
+  }
+
+  tr {
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    &:last-child{
+      border-bottom: 0px;
+    }
+    th {
+      font-weight: bold;
+      font-size: 0.875em;
+      padding: 5px;
+    }
+    td {
+      padding: 5px;
+      color: #4D4E4E;
+      font-size: 0.875em;
+      vertical-align: top;
+    }
+  }
+}
+
+.sidebar-first,
+.sidebar-second {
+  .block {
+
+  }
+}
+
+
+
+
+
+
+
+
+
+

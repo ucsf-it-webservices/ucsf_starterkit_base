@@ -1,0 +1,26 @@
+.person-block, .view-ucsf-profiles-view {
+    .views-field {
+        margin-bottom: 25px;
+    }
+}
+.sidebar-first.col .block > div, .sidebar-second.col .person-contact > div {
+ //   padding: inherit;
+}
+.person-contact {
+    img {
+        margin: 0;
+    }
+}
+.person-list-item {
+    float: left;
+    width: 225px;
+    border: 1px solid #ccc;
+    margin: 8px;
+    padding: 8px;
+    h2 {
+        font-size: 1.1em;
+    }
+    img {
+        border: 1px solid #eee;
+    }
+}

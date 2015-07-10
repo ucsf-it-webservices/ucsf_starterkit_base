@@ -1,0 +1,113 @@
+/******************************************************************************
+* Base widths for desktop & devices
+*/
+
+// Desktop & large display
+// $display-large-max: 1230px;
+// $display-large-min: 822px;
+
+// // Devices and medium size displays
+// $display-medium-max: 820px;
+// $display-medium-min: 632px;
+
+// // Handheld and small display screen
+// $display-small-max: 630px;
+// $display-small-min: 380px;
+
+
+
+/******************************************************************************
+* Fonts
+*/
+
+// $main-font: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+// $main-font: Helvetica, Arial, "Lucida Grande", sans-serif;
+// $signature-font: $main-font;
+
+
+@font-face{
+  font-family: "Granjon";
+  src:url(../fonts/Granjon/GranjonLTStd.eot);
+  src:url(../fonts/Granjon/GranjonLTStd.eot?#iefix) format("embedded-opentype"),
+  url(../fonts/Granjon/GranjonLTStd.ttf) format("truetype"),
+  url(../fonts/Granjon/GranjonLTStd.woff) format("woff");
+  font-style:normal;
+  font-weight:normal;
+}
+
+$main-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$secondary-font: "Granjon", Garamond, serif;
+$signature-font: $secondary-font;
+
+
+// $secondary-font: $main-font;
+
+/******************************************************************************
+ * Icons / Sprites
+ */
+// $icon-sprite-base-class: '.sprite';
+// $icon-layout: smart;
+
+// $icon-sprite-dimensions: true;
+$icon-spacing: 30px;
+$icon-new-spacing: 30px;
+
+// arrows
+$icon-next-spacing: 100px;
+$icon-previous-spacing: 100px;
+
+@import "icon/*.png";
+@mixin sprite_css($name) {
+   @include icon-sprite($name);
+   height: icon-sprite-height($name);
+  width: icon-sprite-width($name);
+}
+
+// http://compass-style.org/reference/compass/helpers/sprites/
+// https://gist.github.com/3166895
+@mixin get-sprite($map, $sprite, $repeat: no-repeat, $height: true, $width: true) {
+
+  // http://compass-style.org/reference/compass/helpers/sprites/#sprite-file
+  $sprite-image: sprite-file($map, $sprite);
+
+  // http://compass-style.org/reference/compass/helpers/sprites/#sprite-url
+  $sprite-map: sprite-url($map);
+
+  // http://compass-style.org/reference/compass/helpers/sprites/#sprite-position
+  $sprite-position: sprite-position($map, $sprite);
+
+  // Returns background
+  background: $sprite-map $sprite-position $repeat;
+
+  // http://compass-style.org/reference/compass/helpers/image-dimensions/
+  // Checks to see if the user wants height returned
+  @if $height == true {
+    // Gets the height of the sprite-image
+    $sprite-height: image-height($sprite-image);
+    // Returns the height
+    height: $sprite-height; }
+
+  // http://compass-style.org/reference/compass/helpers/image-dimensions/
+  // Checks to see if the user wants height returned
+  @if $width == true {
+    // Gets the width of the sprite-image
+    $sprite-width: image-width($sprite-image);
+    // Returns the width
+    width: $sprite-width; }
+}
+
+/******************************************************************************
+ * Helper Mixins
+ */
+
+.clearfix-after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.clearfix:after {
+  @extend .clearfix-after;
+}

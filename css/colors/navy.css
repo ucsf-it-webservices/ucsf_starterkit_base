@@ -1,0 +1,401 @@
+@charset "UTF-8";
+/* This file should be the one we copy/paste to override values in the different subthemes */
+/******************************************************************************
+* Base colors: what everything sits on top of with out alteration;
+* if items aren't styled otherwise, these are the colors that
+* are inherited to elements.
+*/
+/*
+  Colors that are supposed to be able to change from site to site
+
+  Total of about 8-10 colors that are changed between themes
+
+  There are some misc elements that style differently depending...
+
+  Body
+   - body-background
+   - body-text
+   - body-link
+   - body-link-hover
+   - body-link-active ( inherits hover if not defined )
+
+  Header
+   - header-title-text
+   - header-background ( main color of the splash )
+   - header-shadow-start
+   - header-shadow-stop
+
+  Main Menu
+   - main menu text
+   - main menu backgroud
+   - main menu hover
+   - main menu active ( can be same as hover till defined )
+   - main menu separator ( border color essentially )
+
+  Page Elements
+   - page-main-title ( main title of the node )
+   - page-headers ( header elements such as h1, h2 ,h3 )
+*/
+/*
+Version 1
+Primary Color: Navy #052049
+Secondary Color: Blue #178CCB
+Version 2
+Primary Color: - Teal #18A3AC
+Secondary Color: Navy #052049
+Version 3
+Primary Color: Green #90BD31
+Secondary Color: Navy #052049
+Version 4
+Primary Color: Orange #F48024
+Secondary Color: Navy #052049
+
+Color Specs: http://identity.ucsf.edu/color
+Grays: #d1D3D3 and #B3B9BF
+Photo overlays – looks like we can have 2 (dark and light). If so, lets use navy and then the white/gray that is on UCSF.edu
+*/
+/* line 70, ../../scss/colors/_colors.scss */
+body {
+  background-color: #FFF;
+  color: #353a3f; }
+  /* line 75, ../../scss/colors/_colors.scss */
+  body a, body a:link {
+    color: #007cbe; }
+  /* line 76, ../../scss/colors/_colors.scss */
+  body a:hover {
+    color: #007cbe; }
+  /* line 77, ../../scss/colors/_colors.scss */
+  body a:active {
+    color: #007cbe; }
+
+/* line 80, ../../scss/colors/_colors.scss */
+.top-region-container {
+  background: #052049; }
+  /* line 83, ../../scss/colors/_colors.scss */
+  .top-region-container, .top-region-container ul li a {
+    color: #FFF; }
+
+/* line 88, ../../scss/colors/_colors.scss */
+.header-container {
+  background: #FFF; }
+  /* line 93, ../../scss/colors/_colors.scss */
+  .header-container .siteinfo h1, .header-container .siteinfo h1 a {
+    color: #48413e; }
+  /* line 98, ../../scss/colors/_colors.scss */
+  .header-container nav {
+    background: #FFF; }
+    /* line 100, ../../scss/colors/_colors.scss */
+    .header-container nav > ul > li {
+      border-right: 1px solid #FFF; }
+      /* line 102, ../../scss/colors/_colors.scss */
+      .header-container nav > ul > li:hover {
+        background: #DBDDE0; }
+      /* line 103, ../../scss/colors/_colors.scss */
+      .header-container nav > ul > li.active-trail, .header-container nav > ul > li.active, .header-container nav > ul > li:active {
+        background: #DBDDE0; }
+      /* line 105, ../../scss/colors/_colors.scss */
+      .header-container nav > ul > li > ul > li {
+        background-color: #DBDDE0; }
+        /* line 107, ../../scss/colors/_colors.scss */
+        .header-container nav > ul > li > ul > li:hover {
+          background-color: #B4B9BF; }
+        /* line 110, ../../scss/colors/_colors.scss */
+        .header-container nav > ul > li > ul > li.active-trail, .header-container nav > ul > li > ul > li.active, .header-container nav > ul > li > ul > li:active {
+          background: #B4B9BF; }
+    /* line 114, ../../scss/colors/_colors.scss */
+    .header-container nav > ul > li > a, .header-container nav > ul > li > a:link {
+      color: #000; }
+    /* line 118, ../../scss/colors/_colors.scss */
+    .header-container nav > ul > li.active::after {
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid transparent; }
+
+/* line 125, ../../scss/colors/_colors.scss */
+.form-type-textfield input#edit-search-block-form--2 {
+  border-color: #d1D3D3; }
+
+/* line 129, ../../scss/colors/_colors.scss */
+.view-id-events .event-meta {
+  background: #F1F4FA; }
+
+/* line 133, ../../scss/colors/_colors.scss */
+.footer-container {
+  color: #FFF; }
+
+/* line 138, ../../scss/colors/_colors.scss */
+#main-content {
+  background: #FFF; }
+
+/* line 146, ../../scss/colors/_colors.scss */
+h1 {
+  color: #052049; }
+
+/* line 150, ../../scss/colors/_colors.scss */
+h2, h3, h4, h5, h6 {
+  color: #052049; }
+
+/* line 152, ../../scss/colors/_colors.scss */
+.page .sidebar-first,
+.page .sidebar-second {
+  border-top: 10px solid #FFF; }
+  /* line 156, ../../scss/colors/_colors.scss */
+  .page .sidebar-first .title, .page .sidebar-first .title a,
+  .page .sidebar-second .title,
+  .page .sidebar-second .title a {
+    color: #48413e; }
+
+/* line 169, ../../scss/colors/_colors.scss */
+.page .sidebar-first .callout-box, .page .sidebar-first .callout-box h1, .page .sidebar-first .callout-box h2, .page .sidebar-first .callout-box h3, .page .sidebar-first .callout-box h4, .page .sidebar-first .callout-box h5, .page .sidebar-first .callout-box a, .page .sidebar-first .callout-box p, .page .sidebar-first .callout-box .title,
+.page .sidebar-second .callout-box,
+.page .sidebar-second .callout-box h1,
+.page .sidebar-second .callout-box h2,
+.page .sidebar-second .callout-box h3,
+.page .sidebar-second .callout-box h4,
+.page .sidebar-second .callout-box h5,
+.page .sidebar-second .callout-box a,
+.page .sidebar-second .callout-box p,
+.page .sidebar-second .callout-box .title,
+.view-id-callout,
+.view-id-callout h1,
+.view-id-callout h2,
+.view-id-callout h3,
+.view-id-callout h4,
+.view-id-callout h5,
+.view-id-callout a,
+.view-id-callout p,
+.view-id-callout .title,
+.callout-box,
+.callout-box h1,
+.callout-box h2,
+.callout-box h3,
+.callout-box h4,
+.callout-box h5,
+.callout-box a,
+.callout-box p,
+.callout-box .title {
+  color: #FFF; }
+
+/* line 176, ../../scss/colors/_colors.scss */
+.page .sidebar-first .callout-box, .page .sidebar-first .callout-box h3, .page .sidebar-first .callout-box h4, .page .sidebar-first .callout-box h5, .page .sidebar-first .callout-box a, .page .sidebar-first .callout-box p,
+.page .sidebar-second .callout-box,
+.page .sidebar-second .callout-box h3,
+.page .sidebar-second .callout-box h4,
+.page .sidebar-second .callout-box h5,
+.page .sidebar-second .callout-box a,
+.page .sidebar-second .callout-box p,
+.callout-box,
+.callout-box h3,
+.callout-box h4,
+.callout-box h5,
+.callout-box a,
+.callout-box p {
+  color: #000; }
+
+/* line 183, ../../scss/colors/_colors.scss */
+.page .sidebar-first .callout-box-alt-1, .page .sidebar-first .callout-box-alt-1 h3, .page .sidebar-first .callout-box-alt-1 h4, .page .sidebar-first .callout-box-alt-1 h5, .page .sidebar-first .callout-box-alt-1 a, .page .sidebar-first .callout-box-alt-1 p,
+.page .sidebar-second .callout-box-alt-1,
+.page .sidebar-second .callout-box-alt-1 h3,
+.page .sidebar-second .callout-box-alt-1 h4,
+.page .sidebar-second .callout-box-alt-1 h5,
+.page .sidebar-second .callout-box-alt-1 a,
+.page .sidebar-second .callout-box-alt-1 p,
+.callout-box-alt-2,
+.callout-box-alt-2 h3,
+.callout-box-alt-2 h4,
+.callout-box-alt-2 h5,
+.callout-box-alt-2 a,
+.callout-box-alt-2 p {
+  color: #FFF; }
+
+/* line 190, ../../scss/colors/_colors.scss */
+.page .sidebar-first .callout-box-alt-2, .page .sidebar-first .callout-box-alt-2 h3, .page .sidebar-first .callout-box-alt-2 h4, .page .sidebar-first .callout-box-alt-2 h5, .page .sidebar-first .callout-box-alt-2 a, .page .sidebar-first .callout-box-alt-2 p,
+.page .sidebar-second .callout-box-alt-2,
+.page .sidebar-second .callout-box-alt-2 h3,
+.page .sidebar-second .callout-box-alt-2 h4,
+.page .sidebar-second .callout-box-alt-2 h5,
+.page .sidebar-second .callout-box-alt-2 a,
+.page .sidebar-second .callout-box-alt-2 p,
+.callout-box-alt-2,
+.callout-box-alt-2 h3,
+.callout-box-alt-2 h4,
+.callout-box-alt-2 h5,
+.callout-box-alt-2 a,
+.callout-box-alt-2 p {
+  color: #052049; }
+
+/* line 195, ../../scss/colors/_colors.scss */
+.view-id-callout,
+.callout-box {
+  background: #dde2e8; }
+
+/* line 199, ../../scss/colors/_colors.scss */
+.callout-box-alt-1 {
+  background: #716FB2; }
+
+/* line 202, ../../scss/colors/_colors.scss */
+.callout-box-alt-2 {
+  background: #FFF; }
+
+/* line 209, ../../scss/colors/_colors.scss */
+.view-id-callout h2.title,
+.callout-box h2.title,
+.callout-box-alt-1 h2.title,
+.callout-box-alt-2 h2.title {
+  background-color: #052049;
+  margin-left: -1em;
+  margin-right: -1em;
+  margin-top: -1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.3em;
+  border-bottom: 8px solid #EDEDEE;
+  margin-bottom: 0.8em; }
+
+/*
+  article meta
+  found in a node contains date and other misc info,
+*/
+/* line 227, ../../scss/colors/_colors.scss */
+.article-meta {
+  background: #F1F4FA;
+  color: #052049; }
+
+/* line 234, ../../scss/colors/_colors.scss */
+.view-display-id-news_block .views-field-title {
+  font-weight: 300; }
+  /* line 237, ../../scss/colors/_colors.scss */
+  .view-display-id-news_block .views-field-title a {
+    color: #052049; }
+
+/* line 245, ../../scss/colors/_colors.scss */
+.view-id-news.view-display-id-page .views-field-title a {
+  color: #052049; }
+
+/* User login */
+/* line 251, ../../scss/colors/_colors.scss */
+.marker,
+.form-required {
+  color: #052049; }
+
+/* FOOTER */
+/* line 260, ../../scss/colors/_colors.scss */
+.footer-container footer h2 {
+  color: #FFF; }
+/* line 262, ../../scss/colors/_colors.scss */
+.footer-container footer nav[role='navigation'] {
+  border-top: 1px solid #F1F4FA; }
+  /* line 264, ../../scss/colors/_colors.scss */
+  .footer-container footer nav[role='navigation'] ul.menu li {
+    border-right: 1px solid #FFF; }
+    /* line 266, ../../scss/colors/_colors.scss */
+    .footer-container footer nav[role='navigation'] ul.menu li a {
+      color: #FFF; }
+
+/* line 272, ../../scss/colors/_colors.scss */
+a.accordion:before {
+  border-left-color: #052049; }
+/* line 275, ../../scss/colors/_colors.scss */
+a.accordion.active:before {
+  border-top-color: #052049; }
+
+/* line 280, ../../scss/colors/_colors.scss */
+.view-id-news .view-display-id-page .views-field-title a {
+  color: #052049; }
+
+@media screen and (max-width: 629px) {
+  /* line 287, ../../scss/colors/_colors.scss */
+  .header-container #mobile-link span {
+    background-color: #FFF; }
+  /* line 290, ../../scss/colors/_colors.scss */
+  .header-container #mobile-link.active {
+    background: #FFF; }
+  /* line 292, ../../scss/colors/_colors.scss */
+  .header-container .header-region {
+    background: #FFF; }
+    /* line 294, ../../scss/colors/_colors.scss */
+    .header-container .header-region .form-actions input {
+      color: #052049; }
+  /* line 296, ../../scss/colors/_colors.scss */
+  .header-container nav[role=navigation] ul.menu li a:hover {
+    background: transparent; }
+
+  /* line 302, ../../scss/colors/_colors.scss */
+  ul.nice-menu-down li a, ul.nice-menu-down li a:active, ul.nice-menu-down li.menuparent a, ul.nice-menu-down li.menuparent a:active, ul.nice-menu-down li.over.menuparent a, ul.nice-menu-down li.over.menuparent a:active, ul.nice-menu-down li.active-trail.menuparent a, ul.nice-menu-down li.active-trail.menuparent a:active, ul.nice-menu li a, ul.nice-menu li a:active, ul.nice-menu li.menuparent a, ul.nice-menu li.menuparent a:active, ul.nice-menu li.over.menuparent a, ul.nice-menu li.over.menuparent a:active, ul.nice-menu li.active-trail.menuparent a, ul.nice-menu li.active-trail.menuparent a:active {
+    color: #fff;
+    background: #FFF; }
+    /* line 305, ../../scss/colors/_colors.scss */
+    ul.nice-menu-down li a:hover, ul.nice-menu-down li a:active:hover, ul.nice-menu-down li.menuparent a:hover, ul.nice-menu-down li.menuparent a:active:hover, ul.nice-menu-down li.over.menuparent a:hover, ul.nice-menu-down li.over.menuparent a:active:hover, ul.nice-menu-down li.active-trail.menuparent a:hover, ul.nice-menu-down li.active-trail.menuparent a:active:hover, ul.nice-menu li a:hover, ul.nice-menu li a:active:hover, ul.nice-menu li.menuparent a:hover, ul.nice-menu li.menuparent a:active:hover, ul.nice-menu li.over.menuparent a:hover, ul.nice-menu li.over.menuparent a:active:hover, ul.nice-menu li.active-trail.menuparent a:hover, ul.nice-menu li.active-trail.menuparent a:active:hover {
+      background: transparent;
+      color: #FFF; }
+
+  /* line 314, ../../scss/colors/_colors.scss */
+  ul.quicktabs-tabs.quicktabs-style-zen li.active a.active, ul.quicktabs-tabs.quicktabs-style-zen li.active a.active:hover {
+    color: #052049;
+    background-color: #fff; }
+
+  /* line 321, ../../scss/colors/_colors.scss */
+  .page .sidebar-second,
+  .page .sidebar-first {
+    background: #EDEDEE; } }
+/* line 327, ../../scss/colors/_colors.scss */
+ul.nice-menu-down {
+  background: #FFF; }
+  /* line 331, ../../scss/colors/_colors.scss */
+  ul.nice-menu-down li.over.menuparent a, ul.nice-menu-down li.over.menuparent a.active, ul.nice-menu-down li.active-trail.menuparent a, ul.nice-menu-down li.active-trail.menuparent a.active {
+    background-color: transparent; }
+  /* line 335, ../../scss/colors/_colors.scss */
+  ul.nice-menu-down li ul {
+    background: transparent; }
+    /* line 337, ../../scss/colors/_colors.scss */
+    ul.nice-menu-down li ul a {
+      background: transparent; }
+      /* line 339, ../../scss/colors/_colors.scss */
+      ul.nice-menu-down li ul a:hover {
+        background: #FFF; }
+  /* line 344, ../../scss/colors/_colors.scss */
+  ul.nice-menu-down li a {
+    color: #fff; }
+    /* line 346, ../../scss/colors/_colors.scss */
+    ul.nice-menu-down li a:hover, ul.nice-menu-down li a.active {
+      background: transparent; }
+    /* line 349, ../../scss/colors/_colors.scss */
+    ul.nice-menu-down li a.active:after {
+      border-top-color: transparent; }
+
+/* line 356, ../../scss/colors/_colors.scss */
+.breadcrumb {
+  color: #052049; }
+  /* line 358, ../../scss/colors/_colors.scss */
+  .breadcrumb a, .breadcrumb .separator {
+    color: #353a3f; }
+
+/* line 363, ../../scss/colors/_colors.scss */
+.view-id-news.view-display-id-page .views-field-created {
+  color: #989898; }
+
+/* line 369, ../../scss/colors/_colors.scss */
+.sidebar-first.col .block .more-link a,
+.sidebar-second.col .block .more-link a {
+  border-color: #052049;
+  color: #052049; }
+
+/* line 375, ../../scss/colors/_colors.scss */
+.flex-nav-container .views-field.views-field-field-link a {
+  color: #052049; }
+
+/* same background color as body for the footer so it hides the bottom box shadow on the .page */
+/* line 385, ../../scss/colors/_colors.scss */
+.footer-container {
+  background: #052049; }
+
+@media screen and (min-width: 630px) and (max-width: 819px) {
+  /* line 399, ../../scss/colors/_colors.scss */
+  .sidebar-second {
+    /*border-top: 30px solid $body-background!important;*/ }
+
+  /* line 404, ../../scss/colors/_colors.scss */
+  .page .sidebar-second,
+  .page .sidebar-first {
+    background: #EDEDEE; } }

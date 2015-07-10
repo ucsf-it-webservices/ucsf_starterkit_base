@@ -1,0 +1,60 @@
+$primary-color: #90BD31;
+$secondary-color: #052049; // Navy
+
+$lightgrey: #d1D3D3;
+$lightgrey-bg: #EDEDEE;
+$grey: #B3B9BF;
+
+
+// Global use
+$signature-color: red;
+$call-to-action-color: #9F4600;
+// Main Body related
+$body-background: #FFF;
+$footer-background: $secondary-color;
+
+
+$body-text: $secondary-color;
+$body-text-alt: #FFF;
+$body-link: $primary-color;
+$body-link-hover: $primary-color;
+$body-link-active: $body-link-hover;
+
+// Top Header region bar
+$top-header-region: $primary-color;
+$top-header-region-text: #FFF;
+
+// Header & Primary Navigation
+$header-background-color: #FFF;
+$header-title-text: #48413e;
+
+// Sidebar base header colors
+$header-sidebar: #48413e;
+
+// Main Menu
+$main-menu-text: #000;
+$main-menu-background: #FFF;
+$main-menu-hover: transparent;
+$main-menu-active: $main-menu-hover;
+$main-menu-separator: #FFF;
+
+// Page Elements
+$page-main-title: $primary-color;
+$page-headers: #456483;
+
+$sidebar-first-background: $lightgrey-bg;
+$sidebar-second-background: $lightgrey-bg;
+
+// Meta Colors:
+$meta-background: #F1F4FA;
+
+// Call out box
+$callout-box: #dde2e8;
+$callout-box-alt-1: $secondary-color;
+$callout-box-alt-2: #FFF;
+
+// article meta
+$article-meta: #F1F4FA;
+
+
+@import "colors";

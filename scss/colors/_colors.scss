@@ -1,0 +1,409 @@
+/* This file should be the one we copy/paste to override values in the different subthemes */
+
+
+/******************************************************************************
+* Base colors: what everything sits on top of with out alteration;
+* if items aren't styled otherwise, these are the colors that
+* are inherited to elements.
+*/
+
+/*
+  Colors that are supposed to be able to change from site to site
+
+  Total of about 8-10 colors that are changed between themes
+
+  There are some misc elements that style differently depending...
+
+  Body
+   - body-background
+   - body-text
+   - body-link
+   - body-link-hover
+   - body-link-active ( inherits hover if not defined )
+
+  Header
+   - header-title-text
+   - header-background ( main color of the splash )
+   - header-shadow-start
+   - header-shadow-stop
+
+  Main Menu
+   - main menu text
+   - main menu backgroud
+   - main menu hover
+   - main menu active ( can be same as hover till defined )
+   - main menu separator ( border color essentially )
+
+  Page Elements
+   - page-main-title ( main title of the node )
+   - page-headers ( header elements such as h1, h2 ,h3 )
+*/
+
+/*
+Version 1
+Primary Color: Navy #052049
+Secondary Color: Blue #178CCB
+Version 2
+Primary Color: - Teal #18A3AC
+Secondary Color: Navy #052049
+Version 3
+Primary Color: Green #90BD31
+Secondary Color: Navy #052049
+Version 4
+Primary Color: Orange #F48024
+Secondary Color: Navy #052049
+
+Color Specs: http://identity.ucsf.edu/color
+Grays: #d1D3D3 and #B3B9BF
+Photo overlays – looks like we can have 2 (dark and light). If so, lets use navy and then the white/gray that is on UCSF.edu
+*/
+$navy: #052049;
+$official-blue: #007cbe;
+$official-content-dark-grey: #353a3f;
+$official-content-light-grey: #989898;
+$official-content-light-grey-bg: #DBDDE0;
+
+
+
+
+
+body {
+  background-color: $body-background;
+  // color: $body-text;
+  color: $official-content-dark-grey;
+
+  a, a:link { color: $official-blue;}
+  a:hover { color: $official-blue;}
+  a:active { color: $official-blue;}
+}
+
+.top-region-container  {
+  background: $top-header-region;
+
+  &, ul li a {
+    color: $top-header-region-text;
+  }
+}
+
+.header-container {
+  background: $header-background-color;
+
+
+  .siteinfo h1 {
+    &, a {
+      color: $header-title-text;
+    }
+  }
+
+  nav {
+    background: $main-menu-background;
+    & > ul > li {
+      border-right: 1px solid $main-menu-separator;
+      &:hover { background: $official-content-light-grey-bg; }
+      &.active-trail, &.active, &:active {  background: $official-content-light-grey-bg; }
+
+      & > ul > li {
+        background-color: $official-content-light-grey-bg;
+        &:hover {
+          background-color: #B4B9BF;
+        }
+        &.active-trail, &.active, &:active {  background: #B4B9BF; }
+      }
+    }
+    & > ul > li > a {
+      &, &:link { color: $main-menu-text; }
+    }
+
+    // The little arrow color
+    & > ul > li.active::after {
+      border-left:5px solid transparent;
+      border-right:5px solid transparent;
+      border-top: 5px solid $main-menu-active;
+    }
+  }
+}
+.form-type-textfield input#edit-search-block-form--2 {
+  border-color: $lightgrey;
+}
+.view-id-events {
+  .event-meta {
+    background: $meta-background;
+  }
+}
+.footer-container {
+  color: $body-text-alt;
+}
+
+
+#main-content {
+  background: #FFF;
+
+}
+
+
+
+// Headers
+h1 {
+  color: $page-main-title;
+}
+
+h2, h3, h4, h5, h6 { color: $navy; }
+// Sidebar headers & titles
+.page .sidebar-first,
+.page .sidebar-second {
+
+  border-top: 10px solid $header-background-color;
+  .title, .title a { color: $header-sidebar; }
+
+}
+
+.page {
+  // background-color: $sidebar-first-background;
+}
+
+// Call out box
+.page .sidebar-first .callout-box,
+.page .sidebar-second .callout-box,
+.view-id-callout,
+.callout-box {
+  &, h1, h2, h3, h4, h5, a, p, .title {
+    color: #FFF;
+  }
+}
+.page .sidebar-first .callout-box,
+.page .sidebar-second .callout-box,
+.callout-box {
+  &, h3, h4, h5, a, p {
+    color: $main-menu-text;
+  }
+}
+.page .sidebar-first .callout-box-alt-1,
+.page .sidebar-second .callout-box-alt-1,
+.callout-box-alt-2 {
+  &, h3, h4, h5, a, p {
+    color: #FFF;
+  }
+}
+.page .sidebar-first .callout-box-alt-2,
+.page .sidebar-second .callout-box-alt-2,
+.callout-box-alt-2 {
+  &, h3, h4, h5, a, p {
+    color: $body-text;
+  }
+}
+
+.view-id-callout,
+.callout-box {
+  background: $callout-box;
+}
+.callout-box-alt-1 {
+  background: $callout-box-alt-1;
+}
+.callout-box-alt-2 {
+  background: $callout-box-alt-2;
+}
+.view-id-callout,
+.callout-box,
+.callout-box-alt-1,
+.callout-box-alt-2 {
+  h2.title {
+    background-color: $primary-color;
+    margin-left: -1em;
+    margin-right: -1em;
+    margin-top: -1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.3em;
+    border-bottom: 8px solid $lightgrey-bg;
+    margin-bottom: 0.8em;
+  }
+}
+
+/*
+  article meta
+  found in a node contains date and other misc info,
+*/
+.article-meta {
+  background: $article-meta;
+  color: $body-link;
+}
+
+// News Block,
+.view-display-id-news_block {
+  .views-field-title {
+    font-weight: 300;
+
+    a { color: $body-link; }
+  }
+}
+
+// General News item stuff
+.view-id-news {
+  &.view-display-id-page {
+    .views-field-title {
+      a { color: $body-link;}
+    }
+  }
+}
+
+/* User login */
+.marker,
+.form-required {
+  color: $body-text;
+}
+
+/* FOOTER */
+// @include icon-sprite('phone');
+.footer-container footer {
+
+  h2 { color: #FFF; }
+
+  nav[role='navigation'] {
+    border-top: 1px solid $meta-background;
+    ul.menu li {
+      border-right: 1px solid #FFF;
+      a {  color: #FFF; }
+    }
+  }
+}
+
+a.accordion {
+  &:before {
+    border-left-color: $body-link;
+  }
+  &.active:before {
+    border-top-color: $body-link;
+  }
+}
+
+.view-id-news .view-display-id-page .views-field-title a { color: $page-main-title ;}
+
+@media screen and (max-width: 629px) {
+
+  // Navigation & Search Form in Mobile view
+  .header-container {
+    #mobile-link {
+      span {
+        background-color: $main-menu-background;
+      }
+      &.active { background: $main-menu-background; }
+    }
+    .header-region {
+      background: $main-menu-background;
+      .form-actions input { color: $body-link;}
+    }
+    nav[role=navigation] ul.menu li a:hover  {
+      background: $main-menu-hover;
+    }
+  }
+  ul.nice-menu-down, ul.nice-menu {
+    li, li.menuparent, li.over.menuparent, li.active-trail.menuparent {
+      a, a:active {
+        color: #fff;
+        background: $main-menu-background;
+        &:hover {
+          background: $main-menu-hover;
+          color: #FFF;
+        }
+      }
+    }
+  }
+  ul.quicktabs-tabs.quicktabs-style-zen {
+    li.active {
+      a.active, a.active:hover {
+        color: $body-link-hover;
+        background-color: #fff;
+      }
+    }
+  }
+  .page {
+    .sidebar-second,
+    .sidebar-first {
+        background: $sidebar-first-background;
+    }
+  }
+}
+ul.nice-menu-down {
+  background: $main-menu-background;
+  li {
+    &.over.menuparent, &.active-trail.menuparent {
+      a, a.active {
+        background-color: $main-menu-active;
+      }
+    }
+    ul {
+      background: $main-menu-active;
+      a {
+        background: $main-menu-active;
+        &:hover {
+          background: $main-menu-background;
+        }
+      }
+    }
+    a {
+      color: #fff;
+      &:hover, &.active {
+        background: $main-menu-hover;
+      }
+      &.active:after {
+        border-top-color: $main-menu-active;
+      }
+    }
+  }
+}
+
+.breadcrumb {
+  color: $primary-color;
+  a, .separator {
+    color: $official-content-dark-grey;
+  }
+}
+
+.view-id-news.view-display-id-page .views-field-created {
+  color: $official-content-light-grey;
+}
+
+.sidebar-first.col,
+.sidebar-second.col {
+  .block .more-link a{
+    border-color: $navy;
+    color: $navy;
+  }
+}
+
+.flex-nav-container .views-field.views-field-field-link a {
+  color: $navy;
+}
+
+.header-container header nav ul.menu li:hover,
+.header-container header nav ul.menu li.active,
+.header-container header nav ul.menu li.active-trail {
+  // background-color: $official-content-light-grey-bg;
+}
+/* same background color as body for the footer so it hides the bottom box shadow on the .page */
+.footer-container {
+  background: $navy;
+}
+
+
+// 630 - Infinity
+@media screen and (min-width: 630px) {
+}
+
+// 820 - Infinity
+@media screen and (min-width: 820px) {
+}
+
+@media screen and (min-width: 630px) and (max-width: 819px) {
+  .sidebar-second {
+    /*border-top: 30px solid $body-background!important;*/
+  }
+
+  .page {
+        .sidebar-second,
+        .sidebar-first {
+            background: $sidebar-first-background;
+        }
+    }
+}

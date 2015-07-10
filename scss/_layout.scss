@@ -1,0 +1,863 @@
+/**
+ * Gridpak Beta SCSS
+ *
+ * Generator - http://gridpak.com/
+ * Created by @erskinedesign
+ */
+
+// Desktop & large display
+$display_large_max: 1230px;
+$display_large_min: 820px;
+
+// Devices and medium size displays
+$display_medium_max: 819px;
+$display_medium_min: 630px;
+
+// Handheld and small display screen
+$display_small_max: 629px;
+$display_small_min: 380px;
+
+/* Columns */
+    // sidebar + main
+    $two_col_sidebar_first: 34.95935%;
+    $two_col_sidebar_second: 34.95935%;
+    //$two_col_sidebar_second: 24.5935%;
+    $two_col_main_content: 65.04065%;
+    // sidebar + main + sidebar
+    $three_col_sidebar_first:  26.82926829268293%;
+    $three_col_sidebar_second: 26.82926829268293%;
+    $three_col_main_content: 46.34146341463415%;
+
+
+// Box modeling fix.
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+// sidebar + main + sidebar
+@mixin col {
+    border:0px solid rgba(0,0,0,0);
+    float:left;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    -moz-background-clip:padding-box !important;
+    -webkit-background-clip:padding-box !important;
+    background-clip:padding-box !important;
+}
+
+.col {
+   @include col;
+   // margin-bottom: 12px;
+   // background: rgba(128,0,0, .5);
+}
+
+@mixin span($num, $gutter_pc, $gutter_px, $padding, $max_columns) {
+    $one_col: (100% - ($gutter_pc * ($max_columns - 1))) / $max_columns;
+    width:($one_col * $num) + ($gutter_pc * ($num - 1));
+    border-left-width:$gutter_px;
+    padding:$padding;
+    margin-left:$gutter_pc;
+}
+
+@mixin span_first {
+    margin-left:0;
+}
+
+
+body,
+html,
+div {
+     margin: 0;
+     padding:0;
+ }
+
+/*
+Page is our center aligned 95% width container. We have set it's 'position' as relative
+so that the Gridpak overlay will appear in the correct position. We have also updated
+the gridpak.js file to use '.page' as it's container.
+*/
+
+.top-header-region,
+.header-container header,
+.page-container,
+.footer-container {
+     margin: 0 auto;
+     position:relative;
+     &:after { @extend .clearfix-after; }
+}
+
+
+.top-header-region,
+.header-container header,
+.page-container {
+     max-width: $display-large-max;
+}
+
+.no-sidebars #main-content,
+.sidebar-second,
+.sidebar-first {
+    width: 100%;
+}
+
+.sidebar-first.col,
+.sidebar-second.col{
+    padding-top: 2%;
+}
+
+#main-content {
+    padding-bottom: 1em;
+    padding-top: 2em;
+}
+
+
+/* Equal height Columns */
+
+.sidebar-first.col,
+.sidebar-second.col,
+#main-content {
+
+    $eh_padding: 32767px;
+    $eh_additional_padding: 25px;
+    padding-bottom: $eh_padding + $eh_additional_padding !important;
+    margin-bottom: -$eh_padding !important;
+
+}
+
+.front {
+    .sidebar-first,
+    .sidebar-second {
+      border-top-width: 30px !important;
+      &:after {
+        top: 30px !important;
+      }
+    }
+}
+
+
+.page {
+    height: 100%;
+    overflow: hidden;
+    &::after {
+        @extend .clearafter-fix !optional;
+    }
+}
+
+.header-region {
+    position: relative;
+    display: inline;
+}
+
+.siteinfo {
+  float: left;
+  padding-top: 30px;
+  position: relative;
+  z-index: 2;
+  .without-logo & {
+    padding-top: 55px;
+  }
+  figure {
+    height: 60px;
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+  }
+}
+
+
+.breadcrumb {
+    display: none;
+}
+
+.footer-container {
+    min-height: 220px;
+    .block {
+        margin-bottom: 1em;
+    }
+}
+
+
+/*  TEMPORARY WHILE DEV */
+
+    // Hide Search
+    // #search-block-form { display: none; }
+
+/*  END TEMPORARY WHILE DEV */
+
+
+/* 1. 6 Column Grid 0px - 629px
+-----------------------------------------------------------------------------
+
+Span 1:    15.0%
+Span 2:    32.0%
+Span 3:    49.0%
+Span 4:    66.0%
+Span 5:    83.0%
+Span 6 - 12:    100%
+
+----------------------------------------------------------------------------- */
+
+@media screen and (max-width: $display_small_max) {
+
+    /* --- Gridpak variables ---*/
+    $max_columns: 6;
+    $padding: 0 1.5%;
+    $gutter_px: 0;
+    $gutter_pc: 2%;
+
+    .siteinfo {
+      padding-top: 20px;
+    }
+    .col {
+        margin-left:0;
+        padding:0 1.5%;
+        margin-bottom: 1.5em;
+    }
+
+    .row .col:first-child {
+        @include span_first;
+    }
+
+    .top-header-region,
+    .header-container header,
+    .page-container,
+    .footer-container {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    #main-content,
+    .sidebar-first,
+    .sidebar-second {
+    }
+
+    .page {
+        background: none;
+        .sidebar-second,
+        .sidebar-first {
+            padding: 5%;
+        }
+    }
+
+
+    /*
+    Creates the overlap for the main content over the header bar */
+    .header-container {
+        position: relative;
+    }
+
+
+    // Hide elements within the top region when resized to this breakpoint
+    .top-header-region {
+        nav ul li {
+            display: none;
+            &:first-child {
+                display: inline-block;
+            }
+        }
+    }
+
+    // Navigation
+    .header-container  {
+
+        &:after { @extend .clearafter-fix !optional;}
+         // Navigation at mobile level
+
+
+
+        #mobile-link {
+            width: 20%;
+            height: 37%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 121;
+            display: block!important;
+
+        }
+
+        .header-region {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            margin: 0 -5%;
+            z-index: 11;
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
+
+        .block.block-search {
+            overflow: hidden;
+            padding: 1em 5%;
+            input[type='text'],
+            input[type='submit'] {
+                margin: 0;
+                background: transparent;
+                border: none;
+                font-size: 16px;
+                line-height: 1em;
+            }
+
+            .form-actions,
+            .form-item-search-block-form {
+                display: inline-block;
+                line-height: 1em;
+            }
+
+            .form-item-search-block-form {
+                background: #FFF;
+                @include border-radius(4px);
+                // border: 1px solid #BDBDBD;
+                width: 80%;
+                float: left;
+                input {
+                    padding: .85em;
+                    width: 99%;
+                }
+            }
+
+            .form-actions {
+                width: 19%;
+                margin: 0;
+                float: right;
+                input {
+                    padding: .95em;
+                    background: white;
+                    border-radius: 4px;
+                }
+            }
+
+
+        }
+        nav[role=navigation] {
+            font-size: 16px;
+            border: none;
+            width: 100%;
+
+            ul.menu {
+                @include box-shadow(rgba(0,0,0, .5) 0 2px 4px);
+                li {
+                    float: none;
+                    border-right: none;
+                    background: none;
+                    padding: 0;
+                    display: block;
+                    a {
+                        color: #333;
+                        text-align: left;
+                        background: rgb(240,244,250);
+                        padding: .5em 5%;
+                        border-bottom: 1px solid #BEBEBE;
+                        font-weight: normal;
+                        &:hover {
+                            background: rgb(7,39,80);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .span_1 { @include span(1, $gutter_pc, $gutter_px, $padding, $max_columns); }
+    .span_2 { @include span(2, $gutter_pc, $gutter_px, $padding, $max_columns); }
+    .span_3 { @include span(3, $gutter_pc, $gutter_px, $padding, $max_columns); }
+    .span_4 { @include span(4, $gutter_pc, $gutter_px, $padding, $max_columns); }
+    .span_5 { @include span(5, $gutter_pc, $gutter_px, $padding, $max_columns); }
+    .span_6,
+    .span_7,
+    .span_8,
+    .span_9,
+    .span_10,
+    .span_11,
+    .span_12 {
+        @include span_first;
+        width:100%;
+    }
+}
+
+
+// 630 - Infinity
+@media screen and (min-width: $display_medium_min) {
+    /*
+    Creates the overlap for the main content over the header bar */
+    // .not-front .header-container {
+    //     margin-bottom: -90px;
+    // }
+    // .front .header-container {
+    //     margin-bottom: -60px;
+    // }
+
+    .header-region { margin-bottom: 90px; }
+
+    .breadcrumb { display: block;}
+
+    #main-content { margin-top:-10px; }
+
+    // shaodws
+    .sidebar-first {}
+    .sidebar-second {}
+
+    // Search
+    .header-container  {
+
+        .block.block-search {
+            input[type='text'],
+            input[type='submit'] {
+                // margin: 0;
+                // background: transparent;
+                // border: none;
+            }
+
+            .form-actions,
+            .form-item-search-block-form {
+                display: inline-block;
+                line-height: 1em;
+            }
+
+            .form-item-search-block-form {
+                @include border-radius(50px);
+            }
+
+            .form-actions { display: none; }
+
+
+        }
+    }
+
+    .footer-contact-us {
+        float: left;
+
+    }
+    .footer-socialmedias {
+        float: right;
+    }
+
+    .footer-container footer nav[role="navigation"] {
+        clear: both;
+    }
+
+}
+
+/* 2. 8 Column Grid 630px - 819px
+-----------------------------------------------------------------------------
+
+Span 1:    10.75%
+Span 2:    23.5%
+Span 3:    36.25%
+Span 4:    49.0%
+Span 5:    61.75%
+Span 6:    74.5%
+Span 7:    87.25%
+Span 8 - 12:    100%
+
+----------------------------------------------------------------------------- */
+
+
+@media screen and (min-width: $display_medium_min) and (max-width: $display_medium_max) {
+
+    .col {
+        // margin-left:2%;
+        padding:0 2.5%;
+
+        margin-bottom: 1.5em;
+    }
+    .page {
+        background: none;
+        .sidebar-second,
+        .sidebar-first {
+            padding: 5%;
+        }
+    }
+
+
+    /* --- Gridpak variables ---*/
+    $max_columns: 8;
+    $padding: 0 1.5%;
+    $gutter_px: 0;
+    $gutter_pc: 2%;
+
+    .row .col:first-child {
+        @include span_first;
+    }
+
+    .top-header-region,
+    .header-container header,
+    .page-container  {
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+
+    .footer-container {
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+
+   .two-sidebars {
+        // Should aways equal 100%
+        $sidebar_first: $two_col_sidebar_first;
+        $main_content: $two_col_main_content;
+
+        // Three Column
+        #main-content {
+            width: $main_content;
+            margin-left: $sidebar_first;
+
+            &:before, &:after {
+               content: " ";
+               position: absolute;
+               z-index: -1;
+               top: 0;
+               left: $sidebar_first;
+               width: $main_content;
+               bottom: 0;
+               background: #FFF;
+           }
+        }
+
+        .sidebar-first {
+            width: $sidebar_first;
+            margin-left: -($sidebar_first + $main_content);
+
+            &:after {
+                content: " ";
+                position: absolute;
+                z-index: -1;
+                top: 40px;
+                left: 0;
+                width: $sidebar_first;
+                bottom: 0;
+                background: #EDEDEE;
+            }
+
+        }
+
+        .sidebar-second {
+            clear: both;
+        }
+    }
+
+    // One sidebar only
+    .one-sidebar.sidebar-first {
+        // Should aways equal 100%
+        $sidebar_first: $two_col_sidebar_first;
+        $main_content: $two_col_main_content;
+
+        // Three Column
+        #main-content {
+            width: $main_content;
+            margin-left: $sidebar_first;
+            &:before, &:after {
+               content: " ";
+               position: absolute;
+               z-index: -1;
+               top: 0;
+               left: $sidebar_first;
+               width: $main_content;
+               bottom: 0;
+               background: #FFF;
+           }
+        }
+
+        .sidebar-first {
+            width: $sidebar_first;
+            margin-left: -($sidebar_first + $main_content);
+            &:after {
+                content: " ";
+                position: absolute;
+                z-index: -1;
+                top: 40px;
+                left: 0;
+                width: $sidebar_first;
+                bottom: 0;
+                background: #EDEDEE;
+            }
+        }
+    }
+
+
+
+
+    .span_1 { @include span(1, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_2 { @include span(2, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_3 { @include span(3, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_4 { @include span(4, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_5 { @include span(5, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_6 { @include span(6, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_7 { @include span(7, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_8,
+    .span_9,
+    .span_10,
+    .span_11,
+    .span_12 {
+        @include span_first;
+        width:100%;
+    }
+}
+
+/* 3. 12 Column Grid 820px - 1230px
+-----------------------------------------------------------------------------
+
+Span 1:    6.5%
+Span 2:    15.0%
+Span 3:    23.5%
+Span 4:    32.0%
+Span 5:    40.5%
+Span 6:    49.0%
+Span 7:    57.5%
+Span 8:    66.0%
+Span 9:    74.5%
+Span 10:    83.0%
+Span 11:    91.5%
+Span 12:    100%
+
+----------------------------------------------------------------------------- */
+
+@media screen and (min-width: $display_large_min) and (max-width: $display_large_max) {
+
+    .col {
+        // margin-left:2%;
+        padding:0 2.5%;
+    }
+
+    /* --- Gridpak variables ---*/
+    $max_columns: 12;
+    $padding: 0 1.5%;
+    $gutter_px: 0;
+    $gutter_pc: 2%;
+
+
+    .top-header-region,
+    .header-container header,
+    .page-container  {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .footer-container {
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+
+
+
+    .row .col:first-child {
+        @include span_first;
+    }
+
+    .span_1 { @include span(1, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_2 { @include span(2, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_3 { @include span(3, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_4 { @include span(4, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_5 { @include span(5, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_6 { @include span(6, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_7 { @include span(7, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_8 { @include span(8, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_9 { @include span(9, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_10 { @include span(10, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_11 { @include span(11, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_12 {
+        @include span_first;
+        width:100%;
+    }
+}
+
+
+/* 3. 12 Column Grid 820px - Infinity */
+
+@media screen and (min-width: $display_large_min ) {
+
+
+    .header-container {
+        // min-height: 210px;
+    }
+
+    // When both side bars are avialble
+    .two-sidebars {
+        // Should aways equal 100%
+        $sidebar_first:  $three_col_sidebar_first;
+        $sidebar_second: $three_col_sidebar_second;
+        $main_content:   $three_col_main_content;
+
+        // Three Column
+        #main-content {
+            width: $main_content;
+            margin-left: $sidebar_first;
+
+            // Adding hack for full-height columns
+            &:before, &:after {
+               content: " ";
+               position: absolute;
+               z-index: -1;
+               top: 0;
+               left: $sidebar_first;
+               width: $main_content;
+               bottom: 0;
+               background: #FFF;
+           }
+        }
+        .sidebar-first {
+            width: $sidebar_first;
+            margin-left: -($sidebar_first + $main_content );
+            // Adding hack for full-height columns
+            &:after {
+                content: " ";
+                position: absolute;
+                z-index: -1;
+                top: 40px;
+                left: 0;
+                width: $sidebar_first;
+                bottom: 0;
+                background: #EDEDEE;
+            }
+        }
+        .sidebar-second {
+            width: $sidebar_second;
+            &:after {
+                content: " ";
+                position: absolute;
+                z-index: -1;
+                top: 40px;
+                left: $sidebar_first + $main_content;
+                width: $sidebar_second;
+                bottom: 0;
+                background: #EDEDEE;
+            }
+        }
+    }
+
+    // One sidebar only and its sidebar first
+    .one-sidebar.sidebar-first {
+        // Should aways equal 100%
+        $sidebar_first: $two_col_sidebar_first;
+        $main_content: $two_col_main_content;
+
+        // Three Column
+        #main-content {
+            width: $main_content;
+            margin-left: $sidebar_first;
+            &:before, &:after {
+               content: " ";
+               position: absolute;
+               z-index: -1;
+               top: 0;
+               left: $sidebar_first;
+               width: $main_content;
+               bottom: 0;
+               background: #FFF;
+            }
+        }
+
+        .sidebar-first {
+            width: $sidebar_first;
+            margin-left: -($sidebar_first + $main_content);
+            &:after {
+                content: " ";
+                position: absolute;
+                z-index: -1;
+                top: 40px;
+                left: 0;
+                width: $sidebar_first;
+                bottom: 0;
+                background: #EDEDEE;
+            }
+        }
+    }
+
+    // One sidebar only and its sidebar second
+    .one-sidebar.sidebar-second {
+        // Should aways equal 100%
+        $sidebar_second: $two_col_sidebar_second;
+        $main_content: $two_col_main_content;
+
+        // Three Column
+        #main-content {
+            width: $main_content;
+            &:before, &:after {
+               content: " ";
+               position: absolute;
+               z-index: -1;
+               top: 0;
+               left: 0;
+               width: $main_content;
+               bottom: 0;
+               background: #FFF;
+            }
+        }
+
+        .sidebar-second {
+            width: $sidebar_second;
+            &:after {
+                content: " ";
+                position: absolute;
+                z-index: -1;
+                top: 40px;
+                left: $main_content;
+                width: $sidebar_second;
+                bottom: 0;
+                background: #EDEDEE;
+            }
+        }
+    }
+}
+
+
+/* 4. 12 Column Grid 1239px - Infinity
+-----------------------------------------------------------------------------
+
+Span 1:    6.5%
+Span 2:    15.0%
+Span 3:    23.5%
+Span 4:    32.0%
+Span 5:    40.5%
+Span 6:    49.0%
+Span 7:    57.5%
+Span 8:    66.0%
+Span 9:    74.5%
+Span 10:    83.0%
+Span 11:    91.5%
+Span 12:    100%
+
+----------------------------------------------------------------------------- */
+
+@media screen and (min-width: $display_large_max - 1) {
+
+
+    .col {
+        // margin-left:2%;
+        padding:0 2.5%;
+    }
+
+    /* --- Gridpak variables ---*/
+    $max_columns: 12;
+    $padding: 0 1.5%;
+    $gutter_px: 0;
+    $gutter_pc: 2%;
+
+    .row .col:first-child {
+        @include span_first;
+    }
+
+    .span_1 { @include span(1, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_2 { @include span(2, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_3 { @include span(3, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_4 { @include span(4, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_5 { @include span(5, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_6 { @include span(6, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_7 { @include span(7, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_8 { @include span(8, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_9 { @include span(9, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_10 { @include span(10, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_11 { @include span(11, $gutter_pc, $gutter_px, $padding, $max_columns);}
+    .span_12 {
+        @include span_first;
+        width:100%;
+    }
+}

@@ -1,0 +1,155 @@
+/* IE7 FIXES */
+
+// Header
+.ie7 {
+    .header-region {
+        display: inline-block;
+        z-index: 200;
+    }
+    .header-container {
+      header nav ul.menu {
+        display: inline-block;
+      }
+      .row {
+        position:static !important;
+      }
+    }
+}
+
+// Page and Slider
+.ie7 {
+  .page-container {
+      z-index: 9;
+  }
+  .page {
+      z-index: 9;
+  }
+  .flex-nav-container .views-field.views-field-field-link {
+      background:transparent;
+      filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#75000000,endColorstr=#75000000);
+      zoom: 1;
+  }
+  .flex-nav-container .views-field.views-field-field-link .field-content {
+      background:transparent;
+      filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000,endColorstr=#80000000);
+      zoom: 1;
+  }
+  .flex-nav-container ul {
+      list-style-type: none;
+      list-style-image: none;
+  }
+}
+
+// Sidebars
+.ie7 {
+  .sidebar-first {
+      .one-sidebar{
+          .sidebar-first {
+              margin-left: -102%;
+              width: 29%;
+              #main-content {
+                  width: 63%;
+                  margin-left: 33%;
+              }
+          }
+      }
+  }
+  .sidebar-second.one-sidebar  .sidebar-second {
+      width: 29.9%;
+  }
+  .sidebar-second.one-sidebar #main-content {
+      width: 60%;
+  }
+  .two-sidebars {
+  .sidebar-first {
+    zoom: 1;
+    margin-left: -74.5%;
+    width: 22.2%;
+  }
+  .sidebar-second {
+    zoom: 1;
+    width: 21%;
+  }
+  #main-content {
+    max-width: 100%;
+    zoom: 1;
+    width: 42%;
+  }
+  }
+  .no-sidebars #main-content {
+    width: auto;
+  }
+}
+
+// Nice Menu
+.ie7 {
+  .nice-menu {
+      display: inline-block;
+      z-index:10;
+  }
+  .nice-menu-down {
+      li {
+          z-index: 120;
+          ul {
+              z-index: 121 !important;
+          }
+      }
+  }
+}
+
+// Footer
+.ie7 {
+  .footer-socialmedias a {
+      display: inline-block;
+  }
+}
+
+.ie7 .sidebar-first.one-sidebar .sidebar-first {
+  margin-left: -102%;
+  width: 29%;
+}
+
+.ie7 .sidebar-first.one-sidebar #main-content {
+  width: 63%;
+  margin-left: 33%;
+}
+
+.ie7 .sidebar-second.one-sidebar  .sidebar-second {
+  width: 29.9%;
+}
+
+.ie7 .sidebar-second.one-sidebar #main-content {
+  width: 60%;
+}
+
+.ie7 {
+  .two-sidebars {
+    .sidebar-first {
+      zoom: 1;
+      margin-left: -74.5%;
+      width: 22.2%;
+    }
+    .sidebar-second {
+      zoom: 1;
+      width: 21%;
+    }
+    #main-content {
+      max-width: 100%;
+      zoom: 1;
+      width: 42%;
+    }
+  }
+  .no-sidebars #main-content {
+    width: auto;
+  }
+  ul {
+    .nice-menu-down {
+      li {
+        z-index: 120;
+        ul {
+          z-index: 121 !important;
+        }
+      }
+    }
+  }
+}
