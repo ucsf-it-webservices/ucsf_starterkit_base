@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html lang="en" html>
 <!--[if IE 7]>
   <html class="no-js ie7 oldie"<?php print $html_attributes; ?>>
 <![endif]-->
